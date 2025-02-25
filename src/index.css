@@ -1,0 +1,121 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f7fc;
+}
+
+h1, h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  padding: 20px;
+}
+
+.left-side, .right-side {
+  width: 55%;
+  padding: 20px;
+}
+
+
+
+h1 {
+  color: #4A3DE5;
+}
+
+button.form-button {
+  background-color: #4A3DE5;
+  color: white;
+  padding: 7px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 10px;
+}
+
+
+.submitted-details-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+  font-size: 18px;
+}
+
+.submitted-details-container h2 {
+  font-size: 24px;
+  color: #4A3DE5;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.submitted-details-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.submitted-details-container ul li {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.submitted-details-container ul li strong {
+  color: #333;
+}
+
+.submitted-details-container .back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #4A3DE5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.submitted-details-container .back-button:hover {
+  background-color: #4A3DE5;
+}
+
+.submitted-details-container .summary-header {
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+}
+/* Responsive Design for Submitted Details */
+@media (max-width: 768px) {
+  .submitted-details-container {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .submitted-details-container h2 {
+    font-size: 20px;
+  }
+
+  .submitted-details-container ul li {
+    font-size: 16px;
+  }
+
+  .submitted-details-container .back-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
