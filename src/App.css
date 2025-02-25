@@ -203,6 +203,8 @@ input[type=date]:invalid::-webkit-datetime-edit {
   display: flex;
   font-size: 8.5px;
   margin: 18px 0px;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Responsive Design */
