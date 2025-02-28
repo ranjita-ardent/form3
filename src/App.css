@@ -160,43 +160,15 @@ input:checked + .slider:before {
   transform: translateX(14px);
 }
 
-.date-input-wrapper {
-  position: relative;
+#dateInput {
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Hide the default placeholder (mm/dd/yyyy) */
-input[type=date]:invalid::-webkit-datetime-edit {
-  color: white;
-}
-.date-input-wrapper input[type="date"]::-webkit-input-placeholder {
-  /* visibility: hidden; */
-  color: white;
-}
-
-.date-input-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+input[type="date"]::-webkit-calendar-picker-indicator {
   font-size: 10px;
-}
-
-/* Change the color of the text when a date is selected */
-.date-input-wrapper input[type="date"]:valid {
-  color: rgb(14, 14, 19); 
-}
-
-/* Styling for the placeholder text when no date is selected */
-.date-placeholder {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-  color: #190404; 
-  font-size: 6px;
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-.date-input-wrapper input[type="date"]:not(:empty) + .date-placeholder {
-  opacity: 0; /* Hide the placeholder when a date is selected */
+  /* position: sticky; */
+ 
 }
 
 .checkbox-label {
@@ -280,13 +252,6 @@ input[type=date]:invalid::-webkit-datetime-edit {
 }
 
 @media (max-width: 768px) {
-  /* .app-container {
-    flex-direction: column;
-    padding: 10px;
-    display: block;
-    height: auto;
-  } */
-
   .form-container {
     padding: 30px;
     max-width: 100%;
@@ -343,10 +308,6 @@ input[type=date]:invalid::-webkit-datetime-edit {
     padding: 6px 12px;
   }
 
-  /* .date-placeholder {
-    font-size: 8px;
-  } */
-
   .checkbox-label {
     font-size: 8px;
   }
@@ -363,10 +324,183 @@ input[type="checkbox"]{
   height: 10px; 
 }
 
-/* .checkbox-label .checkbox label {
-  font-size: 18px;
+
+:root {
+  --placeholder-color: #9F9F9F;
+}
+
+::placeholder {
+  color: var(--placeholder-color);
+}
+
+/* input,
+select,
+textarea {
+  appearance: none;
 } */
 
+input[type=date],
+input[type=month],
+input[type=week] {
+  &[placeholder]:invalid {
+    &::-webkit-datetime-edit {
+      display: none;
+      justify-content: space-between;
+    }
+    
+    &::before {
+      color: var(--placeholder-color);
+      content: attr(placeholder);
+    }
+  }
+}
+
+.group-fixed-supported {
+  border: none;
+}
+
+input[type=date] {
+  width: auto;
+  display: flex;
+  padding: 8px;
+  font-size: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.input-field {
+  margin-bottom: 14px;
+}
+
+.input-field input,
+.input-field select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 6px;
+  border-top: 1px solid #2A2A2A;
+  border-right: 1px solid #2A2A2A;
+  border-left: 1px solid #2A2A2A;
+  border-bottom: 1.5px solid #2A2A2A;
+  margin-top: 2px;
+}
+
+.phone-number-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-num {
+  display: flex;
+}
+
+.verify-button {
+  margin-left: 13px;
+  border: 1px solid #4A3DE5;
+  color: #4A3DE5;
+  border-radius: 2px;
+  cursor: pointer;
+  opacity: 30%;
+  font-size: 7px;
+  padding: 5px 15px;
+}
+
+.gender-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gender-options label {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-switch {
+  display: flex;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 15px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2A2A2A;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4A3DE5;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+.checkbox-label {
+  display: flex;
+  font-size: 8.5px;
+  margin: 18px 0px;
+  align-items: center;
+  justify-content: center;
+}
 
 
+
+
+
+
+
+
+
+
+
+/* Ensure the calendar icon stays in the same position */
+input[type="date"] {
+  width: 100%;
+  font-size: 6px; 
+  position: relative; 
+  text-align: left; 
+  color: #2A2A2A;
+}
+
+/* Position the calendar icon properly */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 10px; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  /* background-color: transparent;  */
+  border: none; 
+  cursor: pointer; 
+}
 
